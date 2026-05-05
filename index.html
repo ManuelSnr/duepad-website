@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Duepad — Shared subscriptions, sorted before they're due</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav id="nav">
+      <a href="#" class="nav-logo">due<span>pad</span></a>
+      <div class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#features">Features</a>
+        <a href="#waitlist">Early access</a>
+      </div>
+      <a href="#waitlist" class="nav-cta">Join waitlist</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-badge">Shared subscriptions, sorted</div>
+      <h1>Stop nudging people.<br /><em>Start using Duepad.</em></h1>
+      <p class="hero-sub">
+        Add a subscription, invite your group, and let everyone confirm they're
+        still in — before renewal hits.
+      </p>
+      <div class="hero-actions">
+        <a href="#waitlist" class="btn-primary">
+          Get early access
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M2 7h10M8 3l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <a href="#problem" class="btn-ghost">
+          See how it works
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M7 2v10M3 8l4 4 4-4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="preview-wrap">
+      <div class="preview">
+        <div class="preview-bar">
+          <div class="dot-r"></div>
+          <div class="dot-y"></div>
+          <div class="dot-g"></div>
+          <div class="preview-url">app.duepad.co/dashboard</div>
+        </div>
+        <div class="preview-body">
+          <div class="preview-header">
+            <div class="preview-title">My subscriptions</div>
+            <div class="preview-add">+ Add subscription</div>
+          </div>
+          <div class="sub-grid">
+            <div class="sub-card green">
+              <div class="sub-name">ChatGPT Plus</div>
+              <div class="sub-meta">4 members · renews in 6 days</div>
+              <div class="sub-members">
+                <div class="avatar av1">AK</div>
+                <div class="avatar av2">ME</div>
+                <div class="avatar av3">OB</div>
+                <div class="avatar av4">LT</div>
+              </div>
+              <div class="sub-amount">₦1,250 <span>/ person</span></div>
+              <div class="sub-row">
+                <div class="sub-due">Due May 12</div>
+                <div class="sub-badge badge-green">All confirmed</div>
+              </div>
+            </div>
+            <div class="sub-card amber">
+              <div class="sub-name">Netflix Standard</div>
+              <div class="sub-meta">3 members · renews in 3 days</div>
+              <div class="sub-members">
+                <div class="avatar av2">ME</div>
+                <div class="avatar av3">OB</div>
+                <div class="avatar av1">TF</div>
+              </div>
+              <div class="sub-amount">₦2,100 <span>/ person</span></div>
+              <div class="sub-row">
+                <div class="sub-due">Due May 8</div>
+                <div class="sub-badge badge-amber">1 pending</div>
+              </div>
+            </div>
+            <div class="sub-card blue">
+              <div class="sub-name">Spotify Family</div>
+              <div class="sub-meta">5 members · renews in 14 days</div>
+              <div class="sub-members">
+                <div class="avatar av2">ME</div>
+                <div class="avatar av1">KA</div>
+                <div class="avatar av4">RI</div>
+                <div class="avatar av3">FO</div>
+              </div>
+              <div class="sub-amount">₦900 <span>/ person</span></div>
+              <div class="sub-row">
+                <div class="sub-due">Due May 19</div>
+                <div class="sub-badge badge-green">All confirmed</div>
+              </div>
+            </div>
+            <div class="sub-card red">
+              <div class="sub-name">Canva Pro</div>
+              <div class="sub-meta">2 members · renews in 1 day</div>
+              <div class="sub-members">
+                <div class="avatar av2">ME</div>
+                <div class="avatar av3">OB</div>
+              </div>
+              <div class="sub-amount">₦3,500 <span>/ person</span></div>
+              <div class="sub-row">
+                <div class="sub-due">Due May 6</div>
+                <div class="sub-badge badge-red">OB opted out</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="problem">
+      <div class="section-inner">
+        <p class="section-label reveal">The problem</p>
+        <h2 class="section-h reveal">
+          Sharing a subscription makes<br /><em>one person</em> do all the work.
+        </h2>
+        <div class="problem-grid">
+          <div>
+            <div class="problem-item reveal">
+              <div class="problem-num">01</div>
+              <div class="problem-text">
+                <strong>Remind everyone</strong> when renewal is close
+              </div>
+            </div>
+            <div class="problem-item reveal">
+              <div class="problem-num">02</div>
+              <div class="problem-text">
+                <strong>Ask who's still in</strong> — every single time
+              </div>
+            </div>
+            <div class="problem-item reveal">
+              <div class="problem-num">03</div>
+              <div class="problem-text">
+                <strong>Recalculate the split</strong> when someone leaves
+              </div>
+            </div>
+            <div class="problem-item reveal">
+              <div class="problem-num">04</div>
+              <div class="problem-text">
+                <strong>Chase late responses</strong> before you can renew
+              </div>
+            </div>
+            <div class="problem-item reveal">
+              <div class="problem-num">05</div>
+              <div class="problem-text">
+                <strong>Share login details</strong> manually each time
+              </div>
+            </div>
+            <div class="problem-item reveal">
+              <div class="problem-num">06</div>
+              <div class="problem-text">
+                <strong>Update credentials</strong> when someone drops out
+              </div>
+            </div>
+          </div>
+          <div class="chat-mock reveal">
+            <div class="chat-header">Group chat · Netflix 🎬</div>
+            <div class="bubble them">
+              <div class="bubble-name">you</div>
+              Hey guys, Netflix renews in 3 days. Are we all still splitting it?
+            </div>
+            <div class="bubble me">yeah im in</div>
+            <div class="bubble them">
+              <div class="bubble-name">Tunde</div>
+              Yes but can someone remind Kemi?
+            </div>
+            <div class="bubble them">
+              <div class="bubble-name">you</div>
+              Kemi? You still want in?
+            </div>
+            <div class="bubble them">
+              <div class="bubble-name">you</div>
+              Kemi?? 👀
+            </div>
+            <div class="bubble them">
+              <div class="bubble-name">you</div>
+              Ok renewing tonight — send to my Opay
+            </div>
+            <div class="chat-label">This happens every single month.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES: LOOM STYLE -->
+    <section class="features-section" id="features">
+      <div class="features-header">
+        <p class="section-label">Features</p>
+        <h2 class="section-h" style="margin-bottom: 0">
+          Everything the<br /><em>unpaid admin</em> needed.
+        </h2>
+      </div>
+
+      <div class="features-body">
+        <!-- LEFT sticky -->
+        <div class="features-left">
+          <div class="feature-tab active" data-idx="0">
+            <div class="feature-tab-top">
+              <div class="f-dot"></div>
+              <div class="f-num">01</div>
+            </div>
+            <div class="f-title">Automatic reminders</div>
+            <div class="f-desc">
+              Everyone in the group gets notified 7 days and 2 days before
+              renewal. No one can say they didn't know — and you never have to
+              ask.
+            </div>
+          </div>
+          <div class="feature-tab" data-idx="1">
+            <div class="feature-tab-top">
+              <div class="f-dot"></div>
+              <div class="f-num">02</div>
+            </div>
+            <div class="f-title">"Still in?" poll</div>
+            <div class="f-desc">
+              Each reminder includes a one-tap opt-in. Everyone declares their
+              intent. You stop asking the same question every month.
+            </div>
+          </div>
+          <div class="feature-tab" data-idx="2">
+            <div class="feature-tab-top">
+              <div class="f-dot"></div>
+              <div class="f-num">03</div>
+            </div>
+            <div class="f-title">Auto split calculator</div>
+            <div class="f-desc">
+              When someone opts out, the cost per person updates instantly. No
+              manual maths, no awkward back-and-forth messages.
+            </div>
+          </div>
+          <div class="feature-tab" data-idx="3">
+            <div class="feature-tab-top">
+              <div class="f-dot"></div>
+              <div class="f-num">04</div>
+            </div>
+            <div class="f-title">Secure access details</div>
+            <div class="f-desc">
+              Store credentials once. Visible only to confirmed members. When
+              someone opts out, the group is nudged to update passwords.
+            </div>
+          </div>
+          <div class="feature-tab" data-idx="4">
+            <div class="feature-tab-top">
+              <div class="f-dot"></div>
+              <div class="f-num">05</div>
+            </div>
+            <div class="f-title">Shared dashboard</div>
+            <div class="f-desc">
+              Everyone sees the same view — upcoming renewals, who's confirmed,
+              and what they owe. No one is out of the loop.
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT scrolling panels -->
+        <div class="features-right" id="featureRight">
+          <!-- Panel 0: Reminders -->
+          <div class="asset-card" data-panel="0">
+            <div class="asset-body">
+              <div style="font-size: 13px; font-weight: 500; color: var(--ink)">
+                Reminder schedule
+              </div>
+              <div style="font-size: 12px; color: var(--muted2)">
+                ChatGPT Plus · renews May 12
+              </div>
+              <div class="rt">
+                <div class="rt-row">
+                  <div class="rt-ic g">📅</div>
+                  <div class="rt-bd">
+                    <div class="rt-t">7 days before</div>
+                    <div class="rt-s">
+                      May 5 · Email + push to all 4 members
+                    </div>
+                  </div>
+                  <div class="rt-b badge-green">Sent</div>
+                </div>
+                <div class="rt-row">
+                  <div class="rt-ic a">⏰</div>
+                  <div class="rt-bd">
+                    <div class="rt-t">2 days before</div>
+                    <div class="rt-s">
+                      May 10 · Final reminder with poll results
+                    </div>
+                  </div>
+                  <div class="rt-b badge-amber">Scheduled</div>
+                </div>
+                <div class="rt-row">
+                  <div class="rt-ic n">🔁</div>
+                  <div class="rt-bd">
+                    <div class="rt-t">Renewal day</div>
+                    <div class="rt-s">May 12 · Summary sent to group</div>
+                  </div>
+                  <div
+                    class="rt-b"
+                    style="background: var(--bg2); color: var(--muted2)"
+                  >
+                    Upcoming
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 1: Poll -->
+          <div class="asset-card" data-panel="1">
+            <div class="asset-body">
+              <div class="poll-wrap">
+                <div class="poll-label">
+                  <span
+                    style="
+                      width: 7px;
+                      height: 7px;
+                      border-radius: 50%;
+                      background: var(--accent);
+                      display: inline-block;
+                    "
+                  ></span
+                  >Netflix Standard · Due May 8
+                </div>
+                <div class="poll-q">Are you still in for next month?</div>
+                <div class="poll-btns">
+                  <div class="pb y">Yes, I'm in ✓</div>
+                  <div class="pb n">No, opting out</div>
+                </div>
+                <div
+                  style="
+                    font-size: 11px;
+                    color: var(--muted2);
+                    margin-bottom: 10px;
+                  "
+                >
+                  Group responses
+                </div>
+                <div class="pm">
+                  <div class="pm-r">
+                    <div class="pm-l">
+                      <div class="pm-av av1">AK</div>
+                      <div class="pm-n">Akin</div>
+                    </div>
+                    <div class="pm-s s-in">Still in</div>
+                  </div>
+                  <div class="pm-r">
+                    <div class="pm-l">
+                      <div class="pm-av av3">OB</div>
+                      <div class="pm-n">Obioma</div>
+                    </div>
+                    <div class="pm-s s-in">Still in</div>
+                  </div>
+                  <div class="pm-r">
+                    <div class="pm-l">
+                      <div class="pm-av av4">TF</div>
+                      <div class="pm-n">Tunde</div>
+                    </div>
+                    <div class="pm-s s-pen">Pending...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Split -->
+          <div class="asset-card" data-panel="2">
+            <div class="asset-body">
+              <div class="split-wrap">
+                <div class="split-hd">Canva Pro · ₦7,000/month total</div>
+                <div class="split-sd">2 of 3 members confirmed</div>
+                <div class="split-bar">
+                  <div class="split-fill" style="width: 66%"></div>
+                </div>
+                <div class="spl-rows">
+                  <div class="spl-r">
+                    <div class="spl-p">
+                      <div class="spl-av av2">ME</div>
+                      <div class="spl-nm">You</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px">
+                      <div class="spl-tg tg-in">In</div>
+                      <div class="spl-amt">₦3,500</div>
+                    </div>
+                  </div>
+                  <div class="spl-r">
+                    <div class="spl-p">
+                      <div class="spl-av av3">OB</div>
+                      <div class="spl-nm">Obioma</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px">
+                      <div class="spl-tg tg-out">Out</div>
+                      <div class="spl-amt old">₦2,333</div>
+                    </div>
+                  </div>
+                  <div class="spl-r">
+                    <div class="spl-p">
+                      <div class="spl-av av4">LT</div>
+                      <div class="spl-nm">Lara</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px">
+                      <div class="spl-tg tg-in">In</div>
+                      <div class="spl-amt">₦3,500</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="split-new">
+                  <div class="sn-lbl">New split (2 members)</div>
+                  <div class="sn-val">₦3,500 each</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3: Access -->
+          <div class="asset-card" data-panel="3">
+            <div class="asset-body">
+              <div class="acc-wrap">
+                <div class="acc-hd">
+                  <div class="acc-name">Spotify Family · Access details</div>
+                  <div class="acc-lk">🔒 Members only</div>
+                </div>
+                <div class="acc-bd">
+                  <div class="acc-row">
+                    <div class="acc-lbl">Email</div>
+                    <div class="acc-val">
+                      family@spotifygroup.com<span class="acc-cp">Copy</span>
+                    </div>
+                  </div>
+                  <div class="acc-row">
+                    <div class="acc-lbl">Password</div>
+                    <div class="acc-val">
+                      ••••••••••••<span class="acc-cp">Reveal</span>
+                    </div>
+                  </div>
+                  <div class="acc-row">
+                    <div class="acc-lbl">Notes</div>
+                    <div
+                      class="acc-val"
+                      style="font-size: 13px; color: var(--muted)"
+                    >
+                      Premium Family · 6 slots
+                    </div>
+                  </div>
+                </div>
+                <div class="acc-ft">
+                  🔔 Obioma opted out — update your password when ready
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 4: Dashboard -->
+          <div class="asset-card" data-panel="4">
+            <div class="asset-body">
+              <div
+                style="
+                  font-size: 13px;
+                  font-weight: 500;
+                  color: var(--ink);
+                  margin-bottom: 1rem;
+                "
+              >
+                Upcoming renewals
+              </div>
+              <div class="dash-rows">
+                <div class="dash-r">
+                  <div class="dash-l">
+                    <div class="dash-ic" style="background: #fde8e8">🎨</div>
+                    <div>
+                      <div class="dash-sn">Canva Pro</div>
+                      <div class="dash-sd">Due tomorrow · 2 confirmed</div>
+                    </div>
+                  </div>
+                  <div class="dash-rr">
+                    <div class="dash-amt">₦3,500</div>
+                    <div class="dash-st badge-red">Urgent</div>
+                  </div>
+                </div>
+                <div class="dash-r">
+                  <div class="dash-l">
+                    <div class="dash-ic" style="background: #fff3dc">🎬</div>
+                    <div>
+                      <div class="dash-sn">Netflix Standard</div>
+                      <div class="dash-sd">Due May 8 · 2 of 3 confirmed</div>
+                    </div>
+                  </div>
+                  <div class="dash-rr">
+                    <div class="dash-amt">₦2,100</div>
+                    <div class="dash-st badge-amber">1 pending</div>
+                  </div>
+                </div>
+                <div class="dash-r">
+                  <div class="dash-l">
+                    <div class="dash-ic" style="background: #e8f5ef">🤖</div>
+                    <div>
+                      <div class="dash-sn">ChatGPT Plus</div>
+                      <div class="dash-sd">Due May 12 · All confirmed</div>
+                    </div>
+                  </div>
+                  <div class="dash-rr">
+                    <div class="dash-amt">₦1,250</div>
+                    <div class="dash-st badge-green">All in</div>
+                  </div>
+                </div>
+                <div class="dash-r">
+                  <div class="dash-l">
+                    <div class="dash-ic" style="background: #ede0ff">🎵</div>
+                    <div>
+                      <div class="dash-sn">Spotify Family</div>
+                      <div class="dash-sd">Due May 19 · All confirmed</div>
+                    </div>
+                  </div>
+                  <div class="dash-rr">
+                    <div class="dash-amt">₦900</div>
+                    <div class="dash-st badge-green">All in</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="section-inner">
+        <p class="section-label reveal">How it works</p>
+        <h2 class="section-h reveal">
+          Six steps.<br /><em>Zero group chat nudges.</em>
+        </h2>
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-title">Add a subscription</div>
+            <div class="step-desc">
+              Name it, set the cost, pick the renewal date.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-title">Invite by email link</div>
+            <div class="step-desc">
+              No contact swap. They join in one click.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-title">Share access details</div>
+            <div class="step-desc">
+              Credentials visible only to confirmed members.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-title">Reminders go out</div>
+            <div class="step-desc">
+              7 and 2 days before renewal. Automatically.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">05</div>
+            <div class="step-title">"Still in?" poll</div>
+            <div class="step-desc">
+              One tap to confirm. Everyone sees who's in.
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">06</div>
+            <div class="step-title">Split auto-updates</div>
+            <div class="step-desc">
+              Cost recalculates when someone opts out.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="use-section">
+      <div class="section-inner">
+        <p class="section-label reveal">Use cases</p>
+        <h2 class="section-h reveal">
+          Works for any<br /><em>shared subscription.</em>
+        </h2>
+        <div class="pills reveal">
+          <div class="pill active">ChatGPT Plus</div>
+          <div class="pill">Netflix</div>
+          <div class="pill">Spotify Family</div>
+          <div class="pill">YouTube Premium</div>
+          <div class="pill">Canva Pro</div>
+          <div class="pill">Notion</div>
+          <div class="pill">Apple TV+</div>
+          <div class="pill">Disney+</div>
+          <div class="pill">Prime Video</div>
+          <div class="pill">Adobe Creative Cloud</div>
+          <div class="pill">Gaming subscriptions</div>
+          <div class="pill">Cloud storage</div>
+          <div class="pill">Any shared tool</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="waitlist">
+      <h2>No more chasing.<br /><em>Just coordination.</em></h2>
+      <p class="cta-sub">Duepad is launching soon. Join the waitlist.</p>
+      <div class="waitlist-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="button" id="waitlistBtn">Join waitlist</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">due<span>pad</span></div>
+      <div class="footer-copy">© 2026 Duepad. All rights reserved.</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
