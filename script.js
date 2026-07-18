@@ -46,13 +46,35 @@ tabs.forEach((tab, i) => {
 // Waitlist form
 document.getElementById('waitlistBtn').addEventListener('click', function () {
   const input = document.querySelector('.waitlist-form input');
+  const btn = this;
+
   if (input.value && input.value.includes('@')) {
-    this.textContent = "You're on the list ✓";
-    this.style.background = '#2D6A4F';
+    const originalText = btn.textContent;
+    btn.textContent = 'Joining...';
+    btn.disabled = true;
     input.disabled = true;
-    this.disabled = true;
+
+    // Simulate network request
+    setTimeout(() => {
+      document.getElementById('successModal').classList.add('active');
+      
+      btn.textContent = "You're on the list ✓";
+      btn.style.background = '#2D6A4F';
+      input.value = '';
+    }, 1000);
   } else {
     input.style.borderColor = '#C0392B';
     setTimeout(() => input.style.borderColor = '', 1500);
+  }
+});
+
+// Modal close logic
+document.getElementById('closeModalBtn').addEventListener('click', () => {
+  document.getElementById('successModal').classList.remove('active');
+});
+
+document.getElementById('successModal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('successModal')) {
+    document.getElementById('successModal').classList.remove('active');
   }
 });
