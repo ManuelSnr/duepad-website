@@ -1308,7 +1308,10 @@ footer {
 /* Modal */
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(26, 25, 22, 0.4);
   backdrop-filter: blur(8px);
   z-index: 999;
@@ -1462,7 +1465,7 @@ footer {
     grid-row: 1;
   }
 
-  footer > div:last-child {
+  footer>div:last-child {
     grid-column: 2;
     grid-row: 1;
     justify-content: flex-end;
