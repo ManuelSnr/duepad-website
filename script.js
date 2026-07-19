@@ -51,7 +51,23 @@ tabs.forEach((tab, i) => {
 // Initialize first tab and auto-play
 if (tabs.length > 0) {
   setActive(0);
-  startTabInterval();
+  
+  // Only auto-play when the features section is in view to prevent layout jumps
+  const featuresSection = document.querySelector('.features-body');
+  if (featuresSection) {
+    const playObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startTabInterval();
+        } else {
+          clearInterval(tabInterval);
+        }
+      });
+    }, { threshold: 0.1 });
+    playObserver.observe(featuresSection);
+  } else {
+    startTabInterval();
+  }
 }
 
 // Waitlist form
