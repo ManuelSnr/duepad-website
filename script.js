@@ -17,8 +17,17 @@ let tabInterval;
 
 function setActive(idx) {
   currentTab = idx;
-  tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
-  panels.forEach((p, i) => p.classList.toggle('active', i === idx));
+  
+  // Remove active from all to reset state
+  tabs.forEach(t => t.classList.remove('active'));
+  panels.forEach(p => p.classList.remove('active'));
+  
+  // Force a reflow to restart the CSS progress bar animation
+  void tabs[idx].offsetWidth;
+  
+  // Add active state to target
+  tabs[idx].classList.add('active');
+  panels[idx].classList.add('active');
 }
 
 function startTabInterval() {

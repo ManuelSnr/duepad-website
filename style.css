@@ -583,7 +583,32 @@ h1 em {
   border-bottom: 1px solid var(--border);
   cursor: pointer;
   transition: opacity 0.25s;
+  position: relative;
   opacity: 0.32;
+}
+
+@keyframes tabProgress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.feature-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background-color: var(--accent-mid);
+  width: 0%;
+}
+
+.feature-tab.active::after {
+  animation: tabProgress 5s linear forwards;
 }
 
 .feature-tab:first-child {
@@ -1436,13 +1461,20 @@ footer {
     display: none
   }
 
-  .problem-grid,
-  .features-body {
+  .problem-grid {
     grid-template-columns: 1fr
   }
 
-  .features-left {
-    position: static
+  .features-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .features-left,
+  .features-right {
+    display: contents;
+    position: static;
   }
 
   .feature-tab {
@@ -1453,8 +1485,54 @@ footer {
     max-height: none
   }
 
-  .features-right {
-    display: none
+  .feature-tab:nth-child(1) {
+    order: 1;
+  }
+
+  .asset-card:nth-child(1) {
+    order: 2;
+  }
+
+  .feature-tab:nth-child(2) {
+    order: 3;
+  }
+
+  .asset-card:nth-child(2) {
+    order: 4;
+  }
+
+  .feature-tab:nth-child(3) {
+    order: 5;
+  }
+
+  .asset-card:nth-child(3) {
+    order: 6;
+  }
+
+  .feature-tab:nth-child(4) {
+    order: 7;
+  }
+
+  .asset-card:nth-child(4) {
+    order: 8;
+  }
+
+  .feature-tab:nth-child(5) {
+    order: 9;
+  }
+
+  .asset-card:nth-child(5) {
+    order: 10;
+  }
+
+  .asset-card {
+    display: none;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .asset-card.active {
+    display: flex;
   }
 
   .waitlist-form {
