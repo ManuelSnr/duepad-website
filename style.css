@@ -1068,13 +1068,20 @@ h1 em {
 }
 
 .dash-ic {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.dash-ic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .dash-sn {
