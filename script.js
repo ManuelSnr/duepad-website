@@ -111,6 +111,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// FAQ Accordion
+document.querySelectorAll('.faq-item.active').forEach(item => {
+  const answer = item.querySelector('.faq-a');
+  if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
+});
+
+document.querySelectorAll('.faq-q').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    
+    // If it wasn't active, open it
+    if (!isActive) {
+      item.classList.add('active');
+      const answer = item.querySelector('.faq-a');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
+
 // Modal close logic
 document.getElementById('closeModalBtn').addEventListener('click', () => {
   document.getElementById('successModal').classList.remove('active');

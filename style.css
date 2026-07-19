@@ -436,7 +436,8 @@ h1 em {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted2);
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .section-label::before {
@@ -449,7 +450,8 @@ h1 em {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .section-h em {
@@ -1206,7 +1208,8 @@ h1 em {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 2.5rem
+  margin-top: 2.5rem;
+  justify-content: center;
 }
 
 .pill {
@@ -1454,6 +1457,68 @@ footer {
 .reveal.visible {
   opacity: 1;
   transform: none
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 8rem 2rem;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+
+.faq-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.faq-q svg {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  color: var(--muted);
+}
+
+.faq-item.active .faq-q svg {
+  transform: rotate(180deg);
+  color: var(--ink);
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-a-inner {
+  padding-bottom: 1.5rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 @media(max-width:860px) {
