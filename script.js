@@ -9,39 +9,24 @@ const ro = new IntersectionObserver(
 );
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-// Asset card reveal
-const ar = new IntersectionObserver(
-  es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }),
-  { threshold: 0.08 }
-);
-document.querySelectorAll('.asset-card').forEach(c => ar.observe(c));
-
-// Loom-style scroll: observe panels, activate left tabs
+// Tab logic for features section
 const tabs = document.querySelectorAll('.feature-tab');
 const panels = document.querySelectorAll('.asset-card');
 
 function setActive(idx) {
   tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+  panels.forEach((p, i) => p.classList.toggle('active', i === idx));
 }
 
-const po = new IntersectionObserver(
-  es => {
-    es.forEach(e => {
-      if (e.isIntersecting && e.intersectionRatio >= 0.4) {
-        setActive(parseInt(e.target.dataset.panel));
-      }
-    });
-  },
-  { threshold: 0.4 }
-);
-panels.forEach(p => po.observe(p));
-
-// Click tab → scroll to panel
+// Click tab → switch active panel
 tabs.forEach((tab, i) => {
   tab.addEventListener('click', () => {
-    panels[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setActive(i);
   });
 });
+
+// Initialize first tab
+if (tabs.length > 0) setActive(0);
 
 // Waitlist form
 document.getElementById('waitlistBtn').addEventListener('click', function () {
