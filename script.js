@@ -79,6 +79,22 @@ document.getElementById('waitlistBtn').addEventListener('click', function () {
   }
 });
 
+// Smooth scroll without updating URL hash
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    if (!targetId) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
 // Modal close logic
 document.getElementById('closeModalBtn').addEventListener('click', () => {
   document.getElementById('successModal').classList.remove('active');
