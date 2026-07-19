@@ -1115,7 +1115,7 @@ h1 em {
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -1441,5 +1441,30 @@ footer {
 
   .footer-logo img {
     height: 20px;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem 1rem;
+    align-items: center;
+  }
+
+  .footer-logo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  footer > div:last-child {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: flex-end;
+  }
+
+  .footer-copy {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    text-align: center;
+    margin-top: 0.5rem;
   }
 }
