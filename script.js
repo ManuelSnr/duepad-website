@@ -12,21 +12,38 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 // Tab logic for features section
 const tabs = document.querySelectorAll('.feature-tab');
 const panels = document.querySelectorAll('.asset-card');
+let currentTab = 0;
+let tabInterval;
 
 function setActive(idx) {
+  currentTab = idx;
   tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
   panels.forEach((p, i) => p.classList.toggle('active', i === idx));
+}
+
+function startTabInterval() {
+  clearInterval(tabInterval);
+  tabInterval = setInterval(() => {
+    if (tabs.length > 0) {
+      let nextTab = (currentTab + 1) % tabs.length;
+      setActive(nextTab);
+    }
+  }, 5000);
 }
 
 // Click tab → switch active panel
 tabs.forEach((tab, i) => {
   tab.addEventListener('click', () => {
     setActive(i);
+    startTabInterval(); // Reset timer when user interacts
   });
 });
 
-// Initialize first tab
-if (tabs.length > 0) setActive(0);
+// Initialize first tab and auto-play
+if (tabs.length > 0) {
+  setActive(0);
+  startTabInterval();
+}
 
 // Waitlist form
 document.getElementById('waitlistBtn').addEventListener('click', function () {
