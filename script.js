@@ -71,7 +71,7 @@ if (tabs.length > 0) {
 }
 
 // Waitlist form
-document.getElementById('waitlistBtn').addEventListener('click', function () {
+document.getElementById('waitlistBtn').addEventListener('click', async function () {
   const input = document.querySelector('.waitlist-form input');
   const btn = this;
 
@@ -81,14 +81,28 @@ document.getElementById('waitlistBtn').addEventListener('click', function () {
     btn.disabled = true;
     input.disabled = true;
 
-    // Simulate network request
-    setTimeout(() => {
+    try {
+      // Send data to Google Sheets via Apps Script Web App
+      // Using text/plain prevents CORS preflight issues with Google Script redirects
+      await fetch('https://script.google.com/macros/s/AKfycbys-MUFbHYDLwhZsOxZZR6g1OGTmLaOwlFKc9T5koaRM3AY_LFeoarmtB3_BhGnusv2kA/exec', {
+        method: 'POST',
+        body: JSON.stringify({ email: input.value }),
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        }
+      });
+      
       document.getElementById('successModal').classList.add('active');
       
       btn.textContent = "You're on the list ✓";
       btn.style.background = '#2D6A4F';
       input.value = '';
-    }, 1000);
+    } catch (error) {
+      console.error('Waitlist submission failed:', error);
+      btn.textContent = 'Error. Try again';
+      btn.disabled = false;
+      input.disabled = false;
+    }
   } else {
     input.style.borderColor = '#C0392B';
     setTimeout(() => input.style.borderColor = '', 1500);
