@@ -84,7 +84,7 @@ document.getElementById('waitlistBtn').addEventListener('click', async function 
     try {
       // Send data to Google Sheets via Apps Script Web App
       // Using text/plain prevents CORS preflight issues with Google Script redirects
-      await fetch('https://script.google.com/macros/s/AKfycbys-MUFbHYDLwhZsOxZZR6g1OGTmLaOwlFKc9T5koaRM3AY_LFeoarmtB3_BhGnusv2kA/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwW5UIrmGFChtxzxS_CxaDi5KxKG-NUapJb0Zq4XWyWNXpO9kLw8dqgt8zQ5yu6p-n_-Q/exec', {
         method: 'POST',
         body: JSON.stringify({ email: input.value }),
         headers: {
