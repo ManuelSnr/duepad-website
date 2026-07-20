@@ -58,6 +58,7 @@ if (tabs.length > 0) {
     const playObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          setActive(currentTab); // Restart the CSS animation to sync with the JS timer
           startTabInterval();
         } else {
           clearInterval(tabInterval);
