@@ -738,27 +738,11 @@ h1 em {
   border-bottom: none
 }
 
-.rt-ic {
-  width: 34px;
-  height: 34px;
-  border-radius: 9px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  flex-shrink: 0
-}
-
-.rt-ic.g {
-  background: var(--accent-light)
-}
-
-.rt-ic.a {
-  background: #FFF3DC
-}
-
-.rt-ic.n {
-  background: var(--bg2)
+.rt-svg {
+  width: clamp(20px, 4vw, 24px); /* Scales responsively */
+  height: auto;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .rt-bd {
