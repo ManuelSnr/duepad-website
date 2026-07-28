@@ -599,26 +599,176 @@
       </div>
   </section>
 
-  <section class="use-section">
+
+
+  <section class="pricing-section section" id="pricing">
     <div class="section-inner">
-      <p class="section-label reveal">Use cases</p>
-      <h2 class="section-h reveal">
-        Works for any<br /><em>shared subscription.</em>
-      </h2>
-      <div class="pills reveal">
-        <div class="pill active">ChatGPT Plus</div>
-        <div class="pill">Netflix</div>
-        <div class="pill">Spotify Family</div>
-        <div class="pill">YouTube Premium</div>
-        <div class="pill">Canva Pro</div>
-        <div class="pill">Notion</div>
-        <div class="pill">Apple TV+</div>
-        <div class="pill">Disney+</div>
-        <div class="pill">Prime Video</div>
-        <div class="pill">Adobe Creative Cloud</div>
-        <div class="pill">Gaming subscriptions</div>
-        <div class="pill">Cloud storage</div>
-        <div class="pill">Any shared tool</div>
+      <p class="section-label reveal">Pricing</p>
+      <h2 class="section-h reveal" style="margin-bottom: 1rem;">Never be the bad guy again.</h2>
+      <p class="reveal"
+        style="text-align: center; color: var(--muted); margin: 0 auto 3rem; max-width: 580px; font-size: 1.1rem; line-height: 1.5;">
+        Start free with one shared subscription, then upgrade when you're ready to manage them all.
+      </p>
+
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <div class="pricing-segmented-control reveal" id="pricing-toggle-wrap">
+          <div class="segment-slider" id="segment-slider"></div>
+          <div class="segment-btn active" id="monthly-label">Monthly</div>
+          <div class="segment-btn" id="yearly-label">
+            Yearly
+            <span class="segment-badge">2 months free</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-grid reveal">
+        <!-- Free Tier -->
+        <div class="pricing-card">
+          <div class="pricing-tier">Standard</div>
+          <div class="pricing-price-wrap">
+            <span class="pricing-price">$0</span>
+          </div>
+          <div class="pricing-discount">Free forever</div>
+          <p class="pricing-intro">Everything you need to manage a shared subscription.</p>
+
+          <ul class="pricing-features">
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>1 shared subscription</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Unlimited participants</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Renewal check-ins</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Automatic reminders</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Payment tracking</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Dashboard</span>
+            </li>
+          </ul>
+
+          <a href="#waitlist" class="btn-primary">Join waitlist</a>
+          <p
+            style="font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; margin-bottom: -8px; visibility: hidden;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="5" rx="2" />
+              <line x1="2" x2="22" y1="10" y2="10" />
+            </svg>
+            No payment today.
+          </p>
+        </div>
+
+        <!-- Pro Tier -->
+        <div class="pricing-card pro">
+          <div class="pricing-card-badge">Best Value</div>
+          <div class="pricing-tier">Duepad Pro</div>
+          <div class="pricing-price-wrap">
+            <span class="pricing-price" id="pro-price">$2.99</span>
+            <span class="pricing-price-period" id="pro-period">/mo</span>
+          </div>
+          <div class="pricing-discount" id="pro-discount">
+            <s>$3.99/mo</s> · Founding member pricing
+          </div>
+          <p class="pricing-intro">Built to manage your shared digital life.</p>
+          <div style="font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 1rem;">Everything in
+            Standard, scaled for multiple shared subscriptions.</div>
+
+          <ul class="pricing-features">
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Unlimited shared subscriptions</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>Unlimited participants</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>WhatsApp & Telegram reminders</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Advanced Smart Insights</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Activity Timeline</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Access Protection</span>
+            </li>
+            <li>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span>Early access to new features</span>
+            </li>
+          </ul>
+
+          <a href="#" id="openProModalBtn" class="btn-primary">Reserve Pro</a>
+          <p
+            style="font-size: 13px; color: var(--muted2); display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; margin-bottom: -8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="5" rx="2" />
+              <line x1="2" x2="22" y1="10" y2="10" />
+            </svg>
+            No payment today.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -712,6 +862,30 @@
     </div>
   </section>
 
+  <section class="use-section">
+    <div class="section-inner">
+      <p class="section-label reveal">Use cases</p>
+      <h2 class="section-h reveal">
+        Works for any<br /><em>shared subscription.</em>
+      </h2>
+      <div class="pills reveal">
+        <div class="pill active">ChatGPT Plus</div>
+        <div class="pill">Netflix</div>
+        <div class="pill">Spotify Family</div>
+        <div class="pill">YouTube Premium</div>
+        <div class="pill">Canva Pro</div>
+        <div class="pill">Notion</div>
+        <div class="pill">Apple TV+</div>
+        <div class="pill">Disney+</div>
+        <div class="pill">Prime Video</div>
+        <div class="pill">Adobe Creative Cloud</div>
+        <div class="pill">Gaming subscriptions</div>
+        <div class="pill">Cloud storage</div>
+        <div class="pill">Any shared tool</div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-section" id="waitlist">
     <h2>No more chasing.<br /><em>Just coordination.</em></h2>
     <p class="cta-sub">Duepad is launching soon. Join the waitlist.</p>
@@ -730,12 +904,40 @@
     </div>
   </footer>
 
+  <div class="modal-overlay" id="proModal">
+    <div class="modal-content" style="position: relative; max-width: 450px;">
+      <button id="closeProModalIcon"
+        style="position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--muted); line-height: 1;">&times;</button>
+      <div class="modal-icon pro-shimmer" style="background: var(--accent); color: white; border: none;">✦</div>
+      <h3 class="modal-title">Reserve Duepad Pro</h3>
+      <p class="modal-desc">Enter your email to lock in your Founding member pricing. No payment required today.
+      </p>
+
+      <div style="display: flex; gap: 8px; margin-top: 1.5rem; justify-content: center;">
+        <input type="email" id="proEmailInput" placeholder="your@email.com"
+          style="flex: 1; max-width: 250px; font-size: 15px; padding: 0 1rem; border: 1px solid var(--border); border-radius: 8px; height: 48px; outline: none; background: transparent; color: var(--ink);" />
+        <button type="button" id="proWaitlistBtn" class="btn-primary"
+          style="height: 48px; margin: 0; padding: 0 1.5rem;">Reserve</button>
+      </div>
+    </div>
+  </div>
+
   <div class="modal-overlay" id="successModal">
     <div class="modal-content">
       <div class="modal-icon">✓</div>
       <h3 class="modal-title">You're on the list!</h3>
       <p class="modal-desc">Thanks for joining the Duepad waitlist. We'll send you an email when we launch!</p>
       <button class="modal-close" id="closeModalBtn">Got it</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="proSuccessModal">
+    <div class="modal-content">
+      <div class="modal-icon">✓</div>
+      <h3 class="modal-title">Welcome, Founding Member.</h3>
+      <p class="modal-desc">You've reserved your spot for Duepad Pro at our founding price. We'll send you an email as
+        soon as we launch!</p>
+      <button class="modal-close" id="closeProSuccessModalBtn">Got it</button>
     </div>
   </div>
 

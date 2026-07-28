@@ -110,9 +110,71 @@ document.getElementById('waitlistBtn').addEventListener('click', async function 
   }
 });
 
+// Pro Modal Logic
+const proModal = document.getElementById('proModal');
+const openProModalBtn = document.getElementById('openProModalBtn');
+const closeProModalIcon = document.getElementById('closeProModalIcon');
+
+if (openProModalBtn && proModal) {
+  openProModalBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    proModal.classList.add('active');
+  });
+
+  closeProModalIcon.addEventListener('click', () => {
+    proModal.classList.remove('active');
+  });
+
+  proModal.addEventListener('click', (e) => {
+    if (e.target === proModal) {
+      proModal.classList.remove('active');
+    }
+  });
+}
+
+// Pro Waitlist Submit
+document.getElementById('proWaitlistBtn').addEventListener('click', async function () {
+  const input = document.getElementById('proEmailInput');
+  const btn = this;
+
+  if (input.value && input.value.includes('@')) {
+    btn.textContent = 'Reserving...';
+    btn.disabled = true;
+    input.disabled = true;
+
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbwW5UIrmGFChtxzxS_CxaDi5KxKG-NUapJb0Zq4XWyWNXpO9kLw8dqgt8zQ5yu6p-n_-Q/exec', {
+        method: 'POST',
+        body: JSON.stringify({ email: '[PRO] ' + input.value }),
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        }
+      });
+      
+      proModal.classList.remove('active');
+      document.getElementById('proSuccessModal').classList.add('active');
+      
+      btn.textContent = "Reserve";
+      btn.disabled = false;
+      input.disabled = false;
+      input.value = '';
+    } catch (error) {
+      console.error('Pro waitlist submission failed:', error);
+      btn.textContent = 'Error. Try again';
+      btn.disabled = false;
+      input.disabled = false;
+    }
+  } else {
+    input.style.borderColor = '#C0392B';
+    setTimeout(() => input.style.borderColor = '', 1500);
+  }
+});
+
 // Smooth scroll without updating URL hash
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
+    if (this.id === 'openProModalBtn') return; // Skip modal triggers
+
     e.preventDefault();
     const targetId = this.getAttribute('href').substring(1);
     if (!targetId) {
@@ -162,3 +224,53 @@ document.getElementById('successModal').addEventListener('click', (e) => {
     document.getElementById('successModal').classList.remove('active');
   }
 });
+
+document.getElementById('closeProSuccessModalBtn').addEventListener('click', () => {
+  document.getElementById('proSuccessModal').classList.remove('active');
+});
+
+document.getElementById('proSuccessModal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('proSuccessModal')) {
+    document.getElementById('proSuccessModal').classList.remove('active');
+  }
+});
+
+// Pricing Toggle
+const pricingToggleWrap = document.getElementById('pricing-toggle-wrap');
+const monthlyLabel = document.getElementById('monthly-label');
+const yearlyLabel = document.getElementById('yearly-label');
+const proPrice = document.getElementById('pro-price');
+const proPeriod = document.getElementById('pro-period');
+const proDiscount = document.getElementById('pro-discount');
+
+if (pricingToggleWrap) {
+  let isYearly = false;
+  
+  function updatePricing() {
+    if (isYearly) {
+      pricingToggleWrap.classList.add('yearly');
+      yearlyLabel.classList.add('active');
+      monthlyLabel.classList.remove('active');
+      proPrice.textContent = '$29.90';
+      proPeriod.textContent = '/yr';
+      proDiscount.innerHTML = '<s>$39.90/yr</s> · 2 months free';
+    } else {
+      pricingToggleWrap.classList.remove('yearly');
+      monthlyLabel.classList.add('active');
+      yearlyLabel.classList.remove('active');
+      proPrice.textContent = '$2.99';
+      proPeriod.textContent = '/mo';
+      proDiscount.innerHTML = '<s>$3.99/mo</s> · Launch discount';
+    }
+  }
+
+  monthlyLabel.addEventListener('click', () => {
+    isYearly = false;
+    updatePricing();
+  });
+
+  yearlyLabel.addEventListener('click', () => {
+    isYearly = true;
+    updatePricing();
+  });
+}
