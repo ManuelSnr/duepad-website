@@ -158,6 +158,17 @@ document.getElementById('proWaitlistBtn').addEventListener('click', async functi
       btn.disabled = false;
       input.disabled = false;
       input.value = '';
+
+      // Sync the main waitlist catcher state at the bottom of the page
+      const mainWaitlistBtn = document.getElementById('waitlistBtn');
+      const mainWaitlistInput = document.querySelector('.waitlist-form input');
+      if (mainWaitlistBtn && mainWaitlistInput) {
+        mainWaitlistBtn.textContent = "You're on the list ✓";
+        mainWaitlistBtn.style.background = '#2D6A4F';
+        mainWaitlistBtn.disabled = true;
+        mainWaitlistInput.disabled = true;
+        mainWaitlistInput.value = '';
+      }
     } catch (error) {
       console.error('Pro waitlist submission failed:', error);
       btn.textContent = 'Error. Try again';
