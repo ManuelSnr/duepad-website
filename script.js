@@ -254,24 +254,55 @@ const proPrice = document.getElementById('pro-price');
 const proPeriod = document.getElementById('pro-period');
 const proDiscount = document.getElementById('pro-discount');
 
+const currUsd = document.getElementById('curr-usd');
+const currNgn = document.getElementById('curr-ngn');
+
 if (pricingToggleWrap) {
   let isYearly = false;
+  let isNgn = false;
+  // Define base USD prices and conversion rate
+  const NGN_CONVERSION_RATE = 1400; // You can change this rate at any time
+  
+  const priceUsdMonthly = 2.99;
+  const discountUsdMonthly = 3.99;
+  const priceUsdYearly = 29.90;
+  const discountUsdYearly = 39.90;
+
+  function formatNgn(amount) {
+    // Multiply by conversion rate, round to nearest whole number, and format with commas
+    return '₦' + Math.round(amount * NGN_CONVERSION_RATE).toLocaleString();
+  }
 
   function updatePricing() {
+    // Update currency toggle styles
+    if (currUsd && currNgn) {
+      if (isNgn) {
+        currNgn.style.color = 'var(--ink)';
+        currNgn.style.fontWeight = '600';
+        currUsd.style.color = 'var(--muted)';
+        currUsd.style.fontWeight = '500';
+      } else {
+        currUsd.style.color = 'var(--ink)';
+        currUsd.style.fontWeight = '600';
+        currNgn.style.color = 'var(--muted)';
+        currNgn.style.fontWeight = '500';
+      }
+    }
+
     if (isYearly) {
       pricingToggleWrap.classList.add('yearly');
       yearlyLabel.classList.add('active');
       monthlyLabel.classList.remove('active');
-      proPrice.textContent = '$29.90';
+      proPrice.textContent = isNgn ? formatNgn(priceUsdYearly) : `$${priceUsdYearly.toFixed(2)}`;
       proPeriod.textContent = '/yr';
-      proDiscount.innerHTML = '<s>$39.90/yr</s> · Founding member pricing';
+      proDiscount.innerHTML = isNgn ? `<s>${formatNgn(discountUsdYearly)}/yr</s> · Founding member pricing` : `<s>$${discountUsdYearly.toFixed(2)}/yr</s> · Founding member pricing`;
     } else {
       pricingToggleWrap.classList.remove('yearly');
       monthlyLabel.classList.add('active');
       yearlyLabel.classList.remove('active');
-      proPrice.textContent = '$2.99';
+      proPrice.textContent = isNgn ? formatNgn(priceUsdMonthly) : `$${priceUsdMonthly.toFixed(2)}`;
       proPeriod.textContent = '/mo';
-      proDiscount.innerHTML = '<s>$3.99/mo</s> · Founding member pricing';
+      proDiscount.innerHTML = isNgn ? `<s>${formatNgn(discountUsdMonthly)}/mo</s> · Founding member pricing` : `<s>$${discountUsdMonthly.toFixed(2)}/mo</s> · Founding member pricing`;
     }
   }
 
@@ -284,4 +315,15 @@ if (pricingToggleWrap) {
     isYearly = true;
     updatePricing();
   });
+
+  if (currUsd && currNgn) {
+    currUsd.addEventListener('click', () => {
+      isNgn = false;
+      updatePricing();
+    });
+    currNgn.addEventListener('click', () => {
+      isNgn = true;
+      updatePricing();
+    });
+  }
 }
