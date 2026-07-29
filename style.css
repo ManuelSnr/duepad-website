@@ -1805,6 +1805,14 @@ footer {
     order: 10;
   }
 
+  .feature-tab:nth-child(6) {
+    order: 11;
+  }
+
+  .asset-card:nth-child(6) {
+    order: 12;
+  }
+
   .asset-card {
     display: none;
     margin-top: 1.5rem;
