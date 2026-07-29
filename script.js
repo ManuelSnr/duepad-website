@@ -17,14 +17,14 @@ let tabInterval;
 
 function setActive(idx) {
   currentTab = idx;
-  
+
   // Remove active from all to reset state
   tabs.forEach(t => t.classList.remove('active'));
   panels.forEach(p => p.classList.remove('active'));
-  
+
   // Force a reflow to restart the CSS progress bar animation
   void tabs[idx].offsetWidth;
-  
+
   // Add active state to target
   tabs[idx].classList.add('active');
   panels[idx].classList.add('active');
@@ -51,7 +51,7 @@ tabs.forEach((tab, i) => {
 // Initialize first tab and auto-play
 if (tabs.length > 0) {
   setActive(0);
-  
+
   // Only auto-play when the features section is in view to prevent layout jumps
   const featuresSection = document.querySelector('.features-body');
   if (featuresSection) {
@@ -92,9 +92,9 @@ document.getElementById('waitlistBtn').addEventListener('click', async function 
           'Content-Type': 'text/plain;charset=utf-8',
         }
       });
-      
+
       document.getElementById('successModal').classList.add('active');
-      
+
       btn.textContent = "You're on the list ✓";
       btn.style.background = '#2D6A4F';
       input.value = '';
@@ -150,10 +150,10 @@ document.getElementById('proWaitlistBtn').addEventListener('click', async functi
           'Content-Type': 'text/plain;charset=utf-8',
         }
       });
-      
+
       proModal.classList.remove('active');
       document.getElementById('proSuccessModal').classList.add('active');
-      
+
       btn.textContent = "Reserve";
       btn.disabled = false;
       input.disabled = false;
@@ -209,13 +209,13 @@ document.querySelectorAll('.faq-q').forEach(button => {
   button.addEventListener('click', () => {
     const item = button.parentElement;
     const isActive = item.classList.contains('active');
-    
+
     // Close all
     document.querySelectorAll('.faq-item').forEach(i => {
       i.classList.remove('active');
       i.querySelector('.faq-a').style.maxHeight = null;
     });
-    
+
     // If it wasn't active, open it
     if (!isActive) {
       item.classList.add('active');
@@ -256,7 +256,7 @@ const proDiscount = document.getElementById('pro-discount');
 
 if (pricingToggleWrap) {
   let isYearly = false;
-  
+
   function updatePricing() {
     if (isYearly) {
       pricingToggleWrap.classList.add('yearly');
@@ -264,14 +264,14 @@ if (pricingToggleWrap) {
       monthlyLabel.classList.remove('active');
       proPrice.textContent = '$29.90';
       proPeriod.textContent = '/yr';
-      proDiscount.innerHTML = '<s>$39.90/yr</s> · 2 months free';
+      proDiscount.innerHTML = '<s>$39.90/yr</s> · Founding member pricing';
     } else {
       pricingToggleWrap.classList.remove('yearly');
       monthlyLabel.classList.add('active');
       yearlyLabel.classList.remove('active');
       proPrice.textContent = '$2.99';
       proPeriod.textContent = '/mo';
-      proDiscount.innerHTML = '<s>$3.99/mo</s> · Launch discount';
+      proDiscount.innerHTML = '<s>$3.99/mo</s> · Founding member pricing';
     }
   }
 
