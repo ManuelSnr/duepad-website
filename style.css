@@ -715,22 +715,32 @@ h1 em {
 .bubble.them {
   background: var(--bg2);
   color: var(--muted);
-  border-bottom-left-radius: 4px;
-  align-self: flex-start
+  border-bottom-right-radius: 4px;
+  align-self: flex-end
 }
 
 .bubble.me {
-  background: var(--accent-light);
+  background: white;
   color: var(--ink);
-  border-bottom-right-radius: 4px;
-  align-self: flex-end;
-  border: 1px solid rgba(45, 106, 79, 0.15)
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .bubble-name {
   font-size: 10px;
   color: var(--muted2);
   margin-bottom: 2px
+}
+
+.bubble-time {
+  font-size: 9px;
+  opacity: 0.6;
+  text-align: right;
+  display: block;
+  margin-top: 3px;
+  line-height: 1;
 }
 
 .chat-label {
